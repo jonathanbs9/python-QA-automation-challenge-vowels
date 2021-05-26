@@ -3,6 +3,7 @@
 # -----------------
 
 import pytest
+#import ipdb; ipdb.set_trace()
 from challenge.challenge import Challenge
 
 # ---------------------------------
@@ -19,31 +20,31 @@ def convert():
 # ---------------------------------
 @pytest.mark.convertion
 def test_convertion_one_consonant(convert):
-    msg = list('c')
-    expected_result = list('*')
+    msg = 'c'
+    expected_result = '*'
     assert convert.convertion(msg)== expected_result
 
 @pytest.mark.convertion
 def test_convertion_one_vowel(convert):
-    msg = list('a')
-    expected_result = list('a')  
+    msg = 'a'
+    expected_result = 'a'
     assert convert.convertion(msg)== expected_result
 
 @pytest.mark.convertion
 def test_convertion_all_vowels(convert):
-    msg = list('aeiouaeiou')
-    expected_result = list('aeiouaeiou')  
+    msg = 'aeiouaeiou'
+    expected_result = 'aeiouaeiou'
     assert convert.convertion(msg)== expected_result
 
 @pytest.mark.convertion
 def test_convertion_all_consonants(convert):
-    msg = list('bcdfghjklmpqrtvwxyz')
-    expected_result = list('*******************')  
+    msg = 'bcdfghjklmpqrtvwxyz'
+    expected_result = '*******************'
     assert convert.convertion(msg)== expected_result
 
 @pytest.mark.convertion
 def test_convertion_all_blank_spaces(convert):
-    msg = list(' ')
-    expected_result = list('_')  
+    msg = ' '
+    expected_result = '_'
     assert convert.convertion(msg)== expected_result
 
